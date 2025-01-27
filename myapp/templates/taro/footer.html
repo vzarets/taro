@@ -1,0 +1,27 @@
+{% load static %}
+<div class="footer-wrapper">
+    <div class="foot-container">
+        <div class="content">
+            <div class="left">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'taro/images/logo-black.svg' %}" alt="logo-black">
+                </a>
+                <h1>сайт тарологии</h1>
+            </div>
+            <div class="right">
+                <a href="{% url 'faq' %}">FAQ</a>
+                <a href="#">контакты</a>
+                <a href="#">оплата</a>
+                <a href="#">политика</a>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="f_box">
+            <div class="contacts">
+                <img src="{% static 'taro/images/inst.svg' %}" alt="inst">
+                <img src="{% static 'taro/images/vk.svg' %}" alt="vk" onclick="vk()">
+                <img src="{% static 'taro/images/tg.svg' %}" alt="tg" onclick="tg()">
+            </div>
+        </div>
+    </div>
+</div>

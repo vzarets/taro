@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'taro/css/reg_style.css' %}">
+    <link rel="stylesheet" href="{% static 'taro/css/footer.css' %}">
+    <script src="{% static 'taro/js/app.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header-wrapper">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'taro/images/logo-white.svg' %}" alt="logo-white">
+                    </a>
+                </div>
+                <ul class="navbar">
+                    <li><a href="{% url 'signup' %}">Регистрация</a></li>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content-container">
+                <form class="box" method="post">
+                    {% csrf_token %}
+                    <div class="text">
+                        <a href="{% url 'login' %}">Вход /</a>
+                        <h1 class="log">Регистрация</h1>
+                    </div>
+                    <div class="place">
+                        <div class="qq">
+                            <!-- Логин -->
+                            <div class="t">Логин</div>
+                            <input class="but" type="text" name="username" placeholder="Введите логин" required>
+                            {% if form.username.errors %}
+                                <div style="color: red;">{{ form.username.errors }}</div>
+                            {% endif %}
+
+                            <!-- Пароль -->
+                            <div class="t">Пароль</div>
+                            <input class="but" type="password" name="password1" placeholder="Введите пароль" required>
+                            {% if form.password1.errors %}
+                                <div style="color: red;">{{ form.password1.errors }}</div>
+                            {% endif %}
+
+                            <!-- Повторите пароль -->
+                            <div class="t">Повторите пароль</div>
+                            <input class="but" type="password" name="password2" placeholder="Повторите пароль" required>
+                            {% if form.password2.errors %}
+                                <div style="color: red;">{{ form.password2.errors }}</div>
+                            {% endif %}
+
+                            <!-- Общие ошибки -->
+                            {% if form.non_field_errors %}
+                                <div style="color: red;">{{ form.non_field_errors }}</div>
+                            {% endif %}
+
+                            <button type="submit" class="button">
+                                Зарегистрироваться
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--<img src="{% static 'taro/images/bg_el_beg1.svg' %}" alt="orbit" class="bg1">
+            <img src="{% static 'taro/images/bg_el_beg2.svg' %}" alt="orbit" class="bg2">-->
+        </div>
+        {% include 'taro/footer.html' %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таро</title>
+    <link rel="stylesheet" href="{% static 'taro/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'taro/css/footer.css' %}">
+    <script src="{% static 'taro/js/app.js' %}" defer></script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="header-wrapper">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'taro/images/logo-black.svg' %}" alt="logo-black">
+                    </a>
+                </div>
+                <ul class="navbar">
+                    <li><a href="{% url 'faq' %}">о нас</a></li>
+                    <li><a href="#">оплата</a></li>
+                    <li><a href="{% url 'home' %}">главная</a></li>
+                    <li><a href="{% url 'logout' %}">выход</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="content-container">
+                <div class="card_button" onclick="main2()">
+                    <img id="card1" src="{% static 'taro/images/taro_card.svg' %}" alt="card">
+                    <img id="card2" src="{% static 'taro/images/taro_card.svg' %}" alt="card">
+                    <a href="#"><img id="card3" src="{% static 'taro/images/taro_card.svg' %}" alt="card"></a>
+                </div>
+                <div class="get-fate-block">
+                    <h1>узнай свою судьбу</h1>
+                    <h2>прямо здесь и сейчас</h2>
+                </div>
+                <h2 id="click_text">нажмите на карту</h2>
+                <img class="pointer" src="{% static 'taro/images/pointer.svg' %}" alt="pointer">
+                <img class="stars" src="{% static 'taro/images/stars.svg' %}" alt="stars">
+                <img src="{% static 'taro/images/bg_element1.svg' %}" alt="orbit" class="bg1">
+                <img src="{% static 'taro/images/bg_element2.svg' %}" alt="orbit" class="bg2">
+            </div>
+        </div>
+        {% include 'taro/footer.html' %}
+    </div>
+</body>
+</html>

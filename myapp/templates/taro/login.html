@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'taro/css/log_style.css' %}">
+    <link rel="stylesheet" href="{% static 'taro/css/footer.css' %}">
+    <script src="{% static 'taro/js/app.js' %}" defer></script>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="header-wrapper">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'taro/images/logo-white.svg' %}" alt="logo-white">
+                    </a>
+                </div>
+                <ul class="navbar">
+                    <li><a href="{% url 'signup' %}">Регистрация</a></li>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content-container">
+                {% if error %}
+                    <div style="color: red; text-align: center; margin-bottom: 10px;">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <form class="box" method="post">
+                    {% csrf_token %}
+                    <div class="text">
+                        <h1 class="log">Вход</h1>
+                        <a href="{% url 'signup' %}">/ Регистрация</a>
+                    </div>
+                    <div class="place">
+                        <div class="qq">
+                            <div class="t">Логин</div>
+                            <input class="but" type="text" name="username" placeholder="Введите логин" required>
+                            <div class="t">Пароль</div>
+                            <input class="but" type="password" name="password" placeholder="Введите пароль" required>
+                            <button type="submit" class="button">Войти</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--<img src="{% static 'taro/images/bg_el_beg1.svg' %}" alt="orbit" class="bg1">
+            <img src="{% static 'taro/images/bg_el_beg2.svg' %}" alt="orbit" class="bg2">-->
+        </div>
+    </div>
+    {% include 'taro/footer.html' %}
+</body>
+</html>

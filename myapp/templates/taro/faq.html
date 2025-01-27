@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часто задаваемые вопросы</title>
+    <link rel="stylesheet" href="{% static 'taro/css/faq.css' %}">
+    <link rel="stylesheet" href="{% static 'taro/css/footer.css' %}">
+    <script src="{% static 'taro/js/app.js' %}" defer></script>
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- Header -->
+        <div class="header-wrapper">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'taro/images/logo-beige.svg' %}" alt="logo-beige">
+                    </a>
+                </div>
+                <ul class="navbar">
+                    <li><a href="{% url 'faq' %}">о нас</a></li>
+                    <li><a href="#">оплата</a></li>
+                    <li><a href="{% url 'home' %}">главная</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content-wrapper">
+            <div class="content-container">
+                <h1 class="head">Часто задаваемые вопросы</h1>
+
+                <!-- Вопрос 1 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Что мы такое?</h1>
+                    </div>
+                    <div class="text">
+                        Мы - команда опытных людей, специализирующихся на тарологии и
+                        нумерологии. Каждый из нас имеет многолетний опыт, которым мы с
+                        радостью готовы поделиться.
+                    </div>
+                </div>
+
+                <!-- Вопрос 2 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Что такое Таро?</h1>
+                    </div>
+                    <div class="text">
+                        Таро - это система карт, которая используется для гадания, 
+                        самопознания и поиска ответов на самые различные ряды вопросов.
+                    </div>
+                </div>
+
+                <!-- Вопрос 3 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Как работает Таро-расклад?</h1>
+                    </div>
+                    <div class="text">
+                        Таро-расклад — это метод гадания, при котором карты вынимаются из
+                        колоды и раскладываются в определенном порядке.
+                    </div>
+                </div>
+
+                <!-- Вопрос 4 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Как интерпретировать карты Таро?</h1>
+                    </div>
+                    <div class="text">
+                        Каждая карта Таро имеет свое значение, которое может варьироваться в
+                        зависимости от контекста расклада и вопроса.
+                    </div>
+                </div>
+
+                <!-- Вопрос 5 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Как часто можно гадать по Таро?</h1>
+                    </div>
+                    <div class="text">
+                        Мы рекомендуем обращаться к Таро тогда, когда вы чувствуете, что вам действительно нужна подсказка.
+                    </div>
+                </div>
+
+                <!-- Вопрос 6 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Почему на вашем сайте есть платные расклады?</h1>
+                    </div>
+                    <div class="text">
+                        Бесплатный расклад предоставляет базовую информацию, а платные позволяют получить более глубокие ответы.
+                    </div>
+                </div>
+
+                <!-- Вопрос 7 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Как связаться с вами?</h1>
+                    </div>
+                    <div class="text">
+                        Для личной консультации и по другим вопросам вы можете обратиться через вкладку “контакты”.
+                    </div>
+                </div>
+
+                <!-- Вопрос 8 -->
+                <div class="box1">
+                    <div class="q">
+                        <img src="{% static 'taro/images/star_faq.svg' %}" alt="star">
+                        <h1>Как вы обеспечиваете конфиденциальность моих данных?</h1>
+                    </div>
+                    <div class="text">
+                        Все ваши данные хранятся в защищённой системе. Мы строго соблюдаем политику конфиденциальности.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% include 'taro/footer.html' %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+/* Unified footer styles */
+.footer-wrapper {
+    background-color: var(--light-brown-color); /* Unified color */
+    padding: 40px 0; /* Standard padding */
+    text-align: center;
+    width: 100%;
+    border-top: 3px solid var(--black-color); /* Top border for consistency */
+}
+
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left {
+    width: 45%;
+    text-align: left;
+}
+
+.left h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--black-color);
+}
+
+.left a img {
+    width: 100px; /* Standardized logo size */
+}
+
+.right {
+    width: 45%;
+    text-align: right;
+}
+
+.right a {
+    display: block;
+    font-weight: bold;
+    color: var(--black-color);
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.right a:hover {
+    color: var(--blown-color); /* Hover effect */
+}
+
+.line {
+    margin: 30px auto;
+    width: 90%;
+    border-bottom: 1px solid var(--black-color);
+}
+
+.f_box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contacts img {
+    width: 30px; /* Standardized icon size */
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contacts img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .foot-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .right a {
+        font-size: 16px;
+    }
+}

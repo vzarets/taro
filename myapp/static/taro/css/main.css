@@ -1,0 +1,452 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --beige-color: #E7E0CB;
+    --black-color: #000;
+    --blown-color: #9D8D5B;
+    --light-brown-color: #CEBE8D;
+}
+
+@font-face {
+    font-family: Kyiv;
+    src: url("/static/taro/fonts/KyivTypeSans-VarGX.ttf") format("truetype");
+}
+
+html, body {
+    font-family: Kyiv;
+    background-color: var(--beige-color);
+    height: 100%;
+    margin: 0;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-wrapper {
+    padding: 15px 5em 0 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 220px;
+    border-bottom: 3px solid #000;
+}
+
+.logo {
+    width: fit-content;
+    transform: translateX(-15em);
+}
+
+.logo a img {
+    transition: 0.6s ease;
+    width: 85%;
+}
+
+.logo a *:hover {
+    transform: rotate(-22.5deg);
+}
+
+.navbar {
+    text-align: center;
+    font-weight: 500;
+    transform: translateX(15em);
+}
+
+.navbar * {
+    box-sizing: border-box;
+    transition: all .35s ease;
+}
+
+.navbar li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: .5em 1em;
+    padding: 0;
+}
+
+.navbar a {
+    padding: .5em .8em;
+    color: var(--black-color);
+    position: relative;
+    text-decoration: none;
+    font-size: 36px;
+}
+
+.navbar a::before,
+.navbar a::after {
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    transition: all .35s ease;
+    opacity: 0;
+}
+
+.navbar a::before {
+    right: 0;
+    top: 0;
+    border-top: 3px solid var(--light-brown-color);
+    border-right: 3px solid var(--blown-color);
+    transform: translate(-100%, 50%);
+}
+
+.navbar a:after {
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid var(--blown-color);
+    border-left: 3px solid var(--light-brown-color);
+    transform: translate(100%, -50%);
+}
+
+.navbar a:hover:before,
+.navbar a:hover:after {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.navbar a:hover {
+    color: var(--blown-color);
+}
+
+.header-container {
+    height: fit-content;
+    width: 1550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-wrapper {
+    flex: 1;
+    margin: 5em 0 21em 0;
+    display: flex;
+    justify-content: center;
+    height: calc(100% - 200px);
+}
+
+.content-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0 0 0;
+    width: 100%;
+    height: 600px;
+}
+
+.card_button {
+    position: relative;
+    z-index: 10;
+}
+
+.content-container .card_button img {
+    width: 300px;
+    transition: 0.25s;
+}
+
+.content-container .card_button #card3:hover {
+    transform: rotate(-5deg);
+}
+
+#card1 {
+     width: 400px;
+    position: absolute;
+    top: 3em;
+    left: 10em; /* Добавляем сдвиг вправо */
+}
+
+#card2 {
+     width: 400px;
+    position: absolute;
+    left: 10.94em; /* Добавляем сдвиг вправо */
+    top: 2.2em;
+}
+
+#card3 {
+     width: 400px;
+    position: absolute;
+    left: 14.06em; /* Добавляем сдвиг вправо */
+}
+
+.get-fate-block {
+    padding: 0.2em 0 0 2em;
+    background-color: var(--blown-color);
+    border-radius: 2.5em;
+    height: 350px;
+    width: 1000px;
+    z-index: 10;
+    transform: translateX(-10em);
+}
+
+
+.get-fate-block h1 {
+    text-transform: uppercase;
+    z-index: 10;
+    font-weight: 500;
+    font-size: 100px;
+    opacity: 40%;
+    transition: 0.5s;
+}
+
+.get-fate-block h1:hover {
+    opacity: 90%;
+}
+
+.get-fate-block h2 {
+    z-index: 10;
+    margin-top: 10px;
+    border-top: 3px solid var(--black-color);
+    width: fit-content;
+    font-weight: 500;
+    font-size: 64px;
+    opacity: 40%;
+    transition: 0.5s;
+}
+
+.get-fate-block h2:hover {
+    opacity: 90%;
+}
+
+.pointer {
+    position: absolute;
+    z-index: 0;
+    user-select: none;
+    transform: rotate(1deg);
+    top: 160px;
+    left: 750px;
+    width: 700px;
+}
+
+#click_text {
+    z-index: 10;
+    width: fit-content;
+    font-weight: 500;
+    font-size: 64px;
+    position: absolute;
+    top: 380px;
+    left: 1000px;
+    opacity: 60%;
+    transition: 0.5s;
+}
+
+#click_text:hover {
+    opacity: 90%;
+}
+
+.stars {
+    position: absolute;
+    z-index: 5;
+    user-select: none;
+    top: 180px;
+    right: 200px;
+    width: 200px;
+    transition: 0.7s ease;
+}
+
+.stars:hover {
+    translate: 0 15px;
+}
+
+.bg1 {
+    width: 400px;
+    position: absolute;
+    left: -190px;
+    bottom: -400px;
+    transition: 0.7s ease;
+    z-index:0;
+}
+
+.bg1:hover {
+    transform: scale(1.1);
+}
+
+.bg2 {
+    z-index: 0;
+    width: 900px;
+    position: absolute;
+    right: -190px;
+    bottom: -400px;
+    transition: 0.7s ease;
+    z-index:0;
+}
+
+.bg2:hover {
+    transform: scale(1.1);
+}
+
+.footer-wrapper {
+    background-color: var(--light-brown-color);
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    z-index:1;
+}
+
+@media (max-width: 1400px) {
+
+    .logo{
+    display:none;
+    }
+
+    .bg1{
+    display:none;
+    }
+
+    .bg2{
+    display:none;
+    }
+
+    .header-container{
+    display:flex;
+    justify-content:center;
+    }
+
+    .navbar a {
+        font-size: 28px;
+        margin:4px;
+        padding:4px;
+    }
+
+    .pointer{
+    display:none;
+    }
+
+    .get-fate-block{
+        width:500px;
+    }
+
+    .get-fate-block h1{
+        font-size: 80px;
+    }
+
+    .get-fate-block h2{
+        display: none;
+    }
+
+    .footer-wrapper{
+        display:none;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .card_button{
+    height:100%;
+    width:400px;
+    }
+
+    .content-container{
+
+        display:flex;
+        justify-content:center;
+    }
+
+    .navbar a {
+        font-size: 24px;
+        margin:4px;
+        padding:4px;
+    }
+
+    #click_text {
+    font-size: 64px;
+    position: absolute;
+    top: 500px;
+    left: 150px;
+    }
+
+    .logo{
+    display:none;
+    }
+
+    .pointer{
+    display:none;
+    }
+
+    .stars{
+    display:none;
+    }
+
+    .get-fate-block{
+        width:500px;
+        display:none;
+    }
+
+    .get-fate-block h1{
+        font-size: 80px;
+    }
+
+    .get-fate-block h2{
+        display: none;
+    }
+
+    .footer-wrapper{
+        display:none;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .card_button{
+    height:100%;
+    width:400px;
+    }
+
+    .content-container{
+
+        display:flex;
+        justify-content:center;
+    }
+
+    .navbar a {
+        font-size: 24px;
+        margin:4px;
+        padding:4px;
+    }
+
+    #click_text {
+    font-size: 64px;
+    position: absolute;
+    top: 500px;
+    left: 50px;
+    }
+
+    .logo{
+    display:none;
+    }
+
+    .pointer{
+    display:none;
+    }
+
+    .stars{
+    display:none;
+    }
+
+    .get-fate-block{
+        width:500px;
+        display:none;
+    }
+
+    .get-fate-block h1{
+        font-size: 80px;
+    }
+
+    .get-fate-block h2{
+        display: none;
+    }
+
+    .footer-wrapper{
+        display:none;
+    }
+}

@@ -1,0 +1,542 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --beige-color: #E7E0CB;
+    --black-color: #000;
+    --blown-color: #9D8D5B;
+    --light-brown-color: #CEBE8D;
+}
+
+
+
+@font-face {
+    font-family: Kyiv;
+    src: url("../fonts/KyivTypeSans-VarGX.ttf") format("truetype");
+}
+
+html, body{
+    font-family: Kyiv;
+    background-color: var(--beige-color);
+}
+
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header-wrapper{
+    padding: 15px 5em 0 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 220px;
+    border-bottom: 3px solid #000;
+    margin: 0 0 2em 0;
+}
+
+
+.logo{
+    width: fit-content;
+    transform: translateX(-15em);
+}
+
+.logo a img{
+    transition: 0.6s ease;
+    width: 85%;
+}
+.logo a *:hover{
+    transform: rotate(-22.5deg);
+}
+
+.navbar {
+    text-align: center;
+    font-weight: 500;
+    transform: translateX(15em);
+}
+
+.navbar * {
+    box-sizing: border-box;
+    transition: all .35s ease;
+}
+
+.navbar li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: .5em 1em;
+    padding: 0;
+}
+
+.navbar a {
+    padding: .5em .8em;
+    color: var(--black-color);
+    position: relative;
+    text-decoration: none;
+    font-size: 36px;
+}
+
+.navbar a::before,
+.navbar a::after {
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    transition: all .35s ease;
+    opacity: 0;
+}
+
+.navbar a::before {
+    content: '';
+    right: 0;
+    top: 0;
+    border-top: 3px solid var(--light-brown-color);
+    border-right: 3px solid var(--blown-color);
+    transform: translate(-100%, 50%);
+}
+
+.navbar a:after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid var(--blown-color);
+    border-left: 3px solid var(--light-brown-color);
+    transform: translate(100%, -50%)
+}
+
+.navbar a:hover:before,
+.navbar a:hover:after{
+   transform: translate(0,0);
+   opacity: 1;
+}
+
+.navbar a:hover{
+    color: var(--blown-color);
+}
+
+.header-container{
+    height: fit-content;
+    width: 1550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.content-wrapper{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+
+.content-container h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+.box{
+    padding: 50px 150px 0 150px;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: 1700px;
+    transition: 1s ease;
+    transform: translateX(600px);
+}
+
+#face{
+    display: none;
+    height: 300px;
+    width:200px;
+    position: absolute;
+    margin-left: -800px;
+    margin-top: 10px;
+    transform-style: preserve-3d;
+    transition: 0.8s ease-in-out;
+}
+
+.content-container .active #card3{
+    transform: rotateY(180deg);
+}
+
+.content-container .active #face {
+    display: block;
+    transform: rotateY(180deg);
+    width: 2000px;
+    height: 495px;
+    transition: all 1s ease-in-out;
+}
+#card1{
+    position: absolute;
+    margin-top: 20px;
+}
+
+#card2{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#card3{
+    position: absolute;
+    z-index: 100;
+    margin-left: 50px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: 0.8s ease-in-out;
+    backface-visibility: hidden;
+}
+
+
+.disc{
+    width: 100%;
+    height: 100%;
+    padding-left: 100px;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: 1s;
+}
+
+.head{
+    width: 100%;
+    height: 100px;
+    background-color: var(--blown-color);
+    border-radius: 26px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 70px;
+    transition: 1s;
+}
+
+.bott {
+    margin-top: 55px;
+    width: 100%;
+    height: auto; /* Высота будет зависеть от содержимого */
+    background-color: var(--blown-color);
+    border-radius: 44px;
+    padding: 20px; /* Добавляем равномерный внутренний отступ */
+    text-align: center;
+    font-size: 16px; /* Уменьшенный размер шрифта */
+    transition: 1s; /* Плавный переход для любых изменений */
+    overflow: hidden; /* Скрыть лишнее содержимое, если оно выходит за пределы */
+    word-wrap: break-word; /* Переносить слова, если они слишком длинные */
+    line-height: 1.5; /* Улучшает читаемость текста */
+}
+
+
+
+/* #card3:hover{
+    transform: scale(1.1);
+} */
+
+.content-container .active .card{
+    width: 500px;
+    transform: translateX(0px);
+}
+
+.content-container .active .disc{
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+
+
+.content-container .active .bott{
+    font-size: 26px;
+}
+
+
+.bg1{
+    width: 600px;
+    rotate: 90deg;
+    position: absolute;
+    left: -200px;
+    bottom: 210px;
+    transition: 0.7s ease;
+}
+
+.bg1:hover{
+    transform: scale(1.1);
+}
+
+.bg2{
+    z-index: 0;
+    width: 200px;
+    position: absolute;
+    right: 0px;
+    bottom: 100px;
+    transition: 0.7s ease;
+}
+
+.bg2:hover{
+    transform: scale(1.1);
+}
+
+
+
+.footer-wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: none;
+}
+
+.foot-container{
+    display: grid;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px 0 70px;
+}
+
+.line{
+    height: 40px;
+    margin: 0 150px 0 150px;
+    border-bottom: 3px solid var(--black-color);
+}
+
+.left{
+    width: 400px;
+    display: grid;
+    justify-content: center;
+}
+
+.left a{
+    display: flex;
+    justify-content: center;
+}
+
+.left h1{
+    font-size: 20px;
+}
+
+.left img{
+    width: 100px;
+}
+
+.right{
+    width: 250px;
+    display: grid;
+    padding-top: 50px;
+}
+
+.right a{
+    font-weight: bold;
+    color: var(--black-color);
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.f_box{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center ;
+}
+
+.contacts{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts img{
+    cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+
+    .bott{
+        font-size: 26px;
+    }
+
+    .box active{
+    padding:10px;
+    }
+
+    .main-wrapper{
+        height: 200vh;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .box{
+        padding:10px
+        display:grid;
+    }
+
+    .active{
+        padding:0;
+    }
+
+    .bg1{
+    display:none;
+    }
+
+    .bg2{
+    display:none;
+    }
+
+    .header-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .navbar a {
+        font-size: 26px;
+    }
+
+    /* Уменьшаем отступы в хедере */
+    .header-wrapper {
+        padding: 15px 2em 0 2em; /* Уменьшаем горизонтальные отступы */
+    }
+
+    .footer-wrapper{
+        display:none;
+    }
+}
+
+
+@media (max-width: 980px) {
+
+
+
+    .bott{
+        font-size: 26px;
+    }
+
+    .main-wrapper{
+        height: 200vh;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .content-container .active .card{
+    display:none;
+    }
+
+    .box{
+    justify-content:center:
+    }
+
+    .disc{
+    padding:0;
+    width:70%;
+    }
+
+
+    .bg1{
+    display:none;
+    }
+
+    .bg2{
+    display:none;
+    }
+
+    .header-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar a {
+        font-size: 26px;
+    }
+
+    /* Уменьшаем отступы в хедере */
+    .header-wrapper {
+        padding: 15px 2em 0 2em; /* Уменьшаем горизонтальные отступы */
+    }
+
+    .footer-wrapper{
+        display:none;
+    }
+}
+
+@media (max-width: 450px) {
+
+
+
+    .bott{
+        font-size: 20px;
+    }
+
+    .main-wrapper{
+        height: 200vh;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .content-container .active .card{
+    display:none;
+    }
+
+    .box{
+    justify-content:center:
+    }
+
+    .disc{
+    padding:0;
+    width:95%;
+    }
+
+    .head{
+    font-size: 45px;
+    }
+
+    .bg1{
+    display:none;
+    }
+
+    .bg2{
+    display:none;
+    }
+
+    .header-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar a {
+        font-size: 26px;
+    }
+
+    /* Уменьшаем отступы в хедере */
+    .header-wrapper {
+        padding: 15px 2em 0 2em; /* Уменьшаем горизонтальные отступы */
+    }
+
+    .footer-wrapper{
+        display:none;
+    }
+}
